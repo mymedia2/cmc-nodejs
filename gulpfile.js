@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
+const eslint = require('gulp-eslint');
 const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
 
@@ -18,6 +19,13 @@ gulp.task('libs', function() {
 			]
 		}))
 		.pipe(gulp.dest('build'));
+});
+
+gulp.task('lint', function() {
+	gulp.src('linttest/**/*.js')
+		.pipe(eslint())
+		.pipe(eslint.formatEach('compact', process.stderr));
+		//.pipe(eslint.fatalAfterError());
 });
 
 gulp.task('test', function() {

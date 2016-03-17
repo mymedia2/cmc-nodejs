@@ -1,0 +1,9 @@
+parserOptions:
+  ecmaVersion: 6
+env:
+  node: true
+extends: eslint:recommended
+rules:
+  space-before-function-paren: [2, {"anonymous": "always", "named": "never"}]
+  camelcase: 2
+  no-console: 0
