@@ -22,7 +22,7 @@ gulp.task('libs', function() {
 });
 
 gulp.task('lint', function() {
-	gulp.src('linttest/**/*.js')
+	gulp.src('libs/**/*.js')
 		.pipe(eslint())
 		.pipe(eslint.formatEach('compact', process.stderr));
 		//.pipe(eslint.fatalAfterError());
